@@ -46,6 +46,7 @@ Los sándwiches de calidad son parte de un nicho de mercado con empresas de todo
 ## Gastos
 Materiales para sándwiches incluyendo madera (cerdo ahumado), pan y packaging[cite: 3].
 * **Inversión Inicial (CAPEX):** **42.100 €** total (Reforma "DIY", Maquinaria 2ª Mano Premium, Fianzas).
+* **Ahorro Tecnológico:** Desarrollo In-House de App "Santo Digital" (Valor mercado ~20k€) a coste cero.
 * **Costes Mensuales (OPEX):** Alquiler (1.500€), Personal (3.250€), Materia Prima (~26% ventas).
 * **Inventario:** Espacio para productos optimizado mediante tecnología de envasado al vacío[cite: 3].
 
@@ -60,3 +61,4 @@ A medida que el negocio crezca, **Santo Cerdo** se anunciará en mercados objeti
 * **Año 1:** Validación del modelo y liquidez para el Gestor (Sueldo + 50% beneficio).
 * **Año 2:** Aceleración del retorno al Inversor (100% del beneficio destinado a devolver la inversión).
 * **Año 3:** Expansión a una segunda unidad (Unidad 2) aprovechando la capacidad sobrante del horno principal.
+* **Año 4-5:** Franquicias. Ingreso adicional por **Fee Tecnológico (SaaS)** de 250€/mes por local franquiciado.

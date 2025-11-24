@@ -50,23 +50,38 @@
 **Datos Base:** Ración Carne: 130 gramos. **Precio Carne: 10,50 €/kg**.
 
 #### A. BRIOCHE (El Superventas)
-* **PVP:** 12,50 € | **Neto:** 11,36 €
+* **PVP:** 12,90 € | **Neto:** 11,73 €
 * Coste Carne (130g): 1,37 €
 * Coste Pan + Resto: 0,90 €
 * **Coste Total:** 2,27 €
-* **MARGEN BRUTO:** **9,09 €** (Food Cost: 19,9%).
+* **MARGEN BRUTO:** **9,46 €** (Food Cost: 19,3%).
 
 #### B. FOCACCIA (El Gourmet)
-* **PVP:** 13,50 € | **Neto:** 12,27 €
+* **PVP:** 12,90 € | **Neto:** 11,73 €
 * Coste Carne (130g): 1,37 €
 * Coste Pan + Resto: 1,10 €
 * **Coste Total:** 2,47 €
-* **MARGEN BRUTO:** **9,80 €** (Food Cost: 20,1%).
+* **MARGEN BRUTO:** **9,26 €** (Food Cost: 21,0%).
 
 ### Estrategia de Salsas (Recetas Exclusivas)
 1. **Salsa Kimchi Mayo:** 70% Mayonesa suave + 30% Base de Kimchi + Lima.
 2. **Alioli de Ajo Negro y Miel:** Alioli base + Ajo negro triturado + Miel de caña.
 3. **BBQ "Bourbon & Coffee":** BBQ base industrial + Shot de café espresso + Chorrito de whisky.
+
+### Ecosistema Tecnológico: "Santo Brain" (SaaS Propio)
+Más que una App, es un Sistema Operativo Gastronómico diseñado para eliminar la fricción operativa y administrativa.
+
+#### 1. Front & Pedidos (Adiós al "Infierno de las Tablets")
+*   **Agregador de Delivery (Middleware):** Herramienta (Otter/Deliverect) que unifica Glovo, Uber y JustEat en una sola pantalla. El pedido entra directo a la impresora de cocina. **Beneficio:** Elimina el error humano de re-teclear tickets y centraliza la operativa.
+*   **Kiosco / QR (Autopedido):** El cliente escanea, pide y paga desde su móvil en el local. **Beneficio:** Elimina la cola en caja, permitiendo al personal centrarse en producción. Aumenta el ticket medio gracias al upselling digital sin presión social.
+
+#### 2. Producción Inteligente
+*   **Etiquetado Térmico Automático:** Impresora térmica conectada a la App. Al pulsar "Pulled Pork", se imprime la etiqueta con fecha de envasado, caducidad y lote. **Beneficio:** Trazabilidad profesional y fin del etiquetado manual con cinta de carrocero.
+*   **Stock Predictivo (Escandallo Vivo):** El sistema descuenta stock exacto por receta (ej: 1 Brioche = -130g carne). **Beneficio:** Alertas automáticas de reposición ("Quedan 10kg de carne, pedir hoy").
+
+#### 3. Gestión Automatizada (Admin Droid)
+*   **Facturas con IA:** Escaneo de facturas de proveedores (Dext). La IA extrae datos, IVA y fecha, subiéndolos automáticamente al software contable. **Beneficio:** "Burocracia Zero". Se acabaron los domingos por la noche picando datos.
+*   **Upselling Algorítmico:** Sugerencias inteligentes en el checkout (+15-20% ticket medio) y sistema de fidelización "Cerdos Coins".
 
 ---
 
@@ -138,7 +153,7 @@ El mercado de sándwiches de calidad es un nicho con competidores de todos los t
 
 ## 8\. GASTOS
 
-### Inversión Inicial (CAPEX) - 42.100 €
+### Inversión Inicial (CAPEX) - 35.800 €
 
 #### 1. Maquinaria Principal (El "Motor" de Producción)
 | Concepto | Detalle Técnico | Precio Est. |
@@ -168,6 +183,10 @@ El mercado de sándwiches de calidad es un nicho con competidores de todos los t
 * **Licencias y Marketing Inicial:** 5.800 €
 * **Fondo de Maniobra:** 6.800 €
 * **Entrada Local:** 6.000 €
+
+#### 4. Activo Intangible (Ahorro Tecnológico)
+* **Desarrollo App "Santo Brain" (In-House):** Valor de Mercado ~20.000 €. **Coste para el Proyecto: 0 €**.
+* *Nota: Este desarrollo propio (SaaS de gestión integral) aumenta la valoración de la empresa sin consumo de caja.*
 
 ### Gastos Mensuales (OPEX)
 
@@ -226,9 +245,15 @@ El mercado de sándwiches de calidad es un nicho con competidores de todos los t
 
 ### Hoja de Ruta
 * **Año 1 (Validación):** Validación del modelo y liquidez para el Gestor (Sueldo + 50% beneficio). Beneficio total: 2.800€/mes.
-* **Año 2 (Payback):** Aceleración del retorno al Inversor (100% del beneficio destinado a devolver la inversión). Recuperación total en ~21 meses.
+* **Año 2 (Payback):** Aceleración del retorno al Inversor (100% del beneficio destinado a devolver la inversión). Recuperación total en ~26 meses.
 * **Año 3 (Expansión):** Apertura de la **Unidad 2** aprovechando la capacidad sobrante del horno principal (Cocina Central).
-* **Año 4-5 (Franquicia):** Lanzamiento del modelo de franquicia (Canon 15.000€, Royalty 5%).
+* **Año 4-5 (Franquicia):** Lanzamiento del modelo de franquicia.
+    * **Canon de Entrada:** 15.000 €.
+    * **Royalty Operativo:** 5% sobre ventas.
+    * **Fee Tecnológico (SaaS Santo Digital):** 250 €/mes por local (Ingreso recurrente pasivo).
 
 ### Proyección a 5 Años
-* **Año 5:** 2 Unidades Propias + 8 Franquicias. Beneficio mensual estimado: **10.800 €**.
+* **Año 5:** 2 Unidades Propias + 8 Franquicias.
+* **Beneficio Operativo:** 10.800 €/mes.
+* **Ingreso Recurrente SaaS:** 2.000 €/mes (8 franquicias x 250€).
+* **Total Beneficio Mensual:** **~12.800 €**.

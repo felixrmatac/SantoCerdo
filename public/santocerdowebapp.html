@@ -8,29 +8,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto+Mono:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'bg-dark': '#121212',
-                        'panel-bg': '#1e1e1e',
-                        'panel-border': '#333333',
-                        'neon-accent': '#FF0099',
-                        'gold-accent': '#FFD700',
-                        'tech-green': '#00ff9d',
-                        'text-main': '#e0e0e0',
-                        'text-muted': '#888888',
-                    },
-                    fontFamily: {
-                        'display': ['Anton', 'sans-serif'],
-                        'body': ['Roboto Mono', 'monospace'],
-                    }
-                }
-            }
-        }
-    </script>
+    <script src="script.js"></script>
 </head>
 <body class="bg-bg-dark text-text-main font-body leading-relaxed overflow-x-hidden text-base">
 
@@ -134,6 +114,13 @@
                             </li>
                         </ul>
                     </div>
+                    <div class="mb-[25px] last:mb-0">
+                        <h4 class="text-gold-accent font-display text-[1.2rem] mb-2.5 uppercase tracking-[0.5px]">2.3 El Hub Unificado (Anti-Tablet Hell)</h4>
+                        <ul class="list-none ml-0">
+                            <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]"><strong>Middleware (Otter/Deliverect):</strong> Fusiona Glovo, Uber y JustEat. Una sola pantalla, una sola impresora.</li>
+                            <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]"><strong>Automatización:</strong> El pedido entra directo a cocina (KDS). Elimina el error humano de re-teclear tickets.</li>
+                        </ul>
+                    </div>
                 </div>
             </article>
 
@@ -154,11 +141,18 @@
                         </ul>
                     </div>
                     <div class="mb-[25px] last:mb-0">
-                        <h4 class="text-gold-accent font-display text-[1.2rem] mb-2.5 uppercase tracking-[0.5px]">3.2 Upselling Agresivo</h4>
+                        <h4 class="text-gold-accent font-display text-[1.2rem] mb-2.5 uppercase tracking-[0.5px]">3.2 Upselling Algorítmico (AI)</h4>
                         <ul class="list-none ml-0">
-                            <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]"><strong>🍔 La Ruleta del Hambre:</strong> Selección aleatoria.</li>
-                            <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]"><strong>🍟 Reto al Ego:</strong> "¿Vas a dejar que esa burger se vaya sola a casa?"</li>
+                            <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]"><strong>🍔 La Ruleta del Hambre:</strong> "No sabes qué pedir? Deja que el algoritmo elija tu destino." (Sube ticket medio +15-20%).</li>
+                            <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]"><strong>🍟 Reto al Ego:</strong> Detecta cesta sin bebida/postre y lanza desafío: "¿Vas a dejar que esa burger se vaya sola a casa? Cobarde."</li>
                             <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]"><strong>📦 Selector de Logística:</strong><br>Opción A: 🥡 Bolsa (Precintada).<br>Opción B: 🏃 Comer Andando (En mano, sin bolsa. Ahorra 20s de packing y 0,50€).</li>
+                        </ul>
+                    </div>
+                    <div class="mb-[25px] last:mb-0">
+                        <h4 class="text-gold-accent font-display text-[1.2rem] mb-2.5 uppercase tracking-[0.5px]">3.3 Autonomía Total (Kiosco/QR)</h4>
+                        <ul class="list-none ml-0">
+                            <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]"><strong>Zero Friction:</strong> El cliente escanea, pide y paga. Tú montas bocadillos, no cuentas monedas.</li>
+                            <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]"><strong>Ticket Booster:</strong> La gente pide más extras digitalmente (sin la presión de un humano esperando).</li>
                         </ul>
                     </div>
                 </div>
@@ -216,6 +210,10 @@
                             <p class="mb-2.5 text-[0.95rem] text-[#ccc]"><span class="inline-block py-[5px] px-[10px] rounded font-bold text-black mr-[5px] text-[0.8rem] uppercase bg-[#ff0055] shadow-[0_0_10px_#ff0055] text-white">ROJO</span> <strong>FLAG ESTRÉS:</strong> Marca momento para Machine Learning.</p>
                         </div>
                     </div>
+                    <div class="mb-[25px] last:mb-0">
+                        <h4 class="text-gold-accent font-display text-[1.2rem] mb-2.5 uppercase tracking-[0.5px]">5.3 Etiquetado Térmico (Traceability)</h4>
+                        <p class="mb-2.5 text-[0.95rem] text-[#ccc]">Adiós al boli y cinta de carrocero. Pulsas "Pulled Pork" y la impresora escupe fecha, caducidad y lote. Seguridad alimentaria a prueba de inspecciones.</p>
+                    </div>
                 </div>
             </article>
 
@@ -241,12 +239,78 @@
                 </div>
             </article>
 
-             <!-- PARTE 7 -->
+            <!-- PARTE 7 -->
+            <article class="bg-panel-bg border border-panel-border rounded-none overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
+                <div class="p-5 border-b border-[#333] flex items-center justify-between bg-[#181818]">
+                    <div class="flex items-center gap-[15px]">
+                        <div class="w-10 h-10 flex items-center justify-center bg-[#222] text-neon-accent border border-[#333]"><i class="fas fa-link"></i></div>
+                        <h3 class="font-display text-[1.8rem] text-white tracking-[1px] uppercase">7. Fidelización (The Hook)</h3>
+                    </div>
+                </div>
+                <div class="p-[25px]">
+                    <div class="mb-[25px] last:mb-0">
+                        <p class="mb-2.5 text-[0.95rem] text-[#ccc]">Convertimos la adicción al cerdo en un activo digital.</p>
+                    </div>
+                    <div class="mb-[25px] last:mb-0">
+                        <h4 class="text-gold-accent font-display text-[1.2rem] mb-2.5 uppercase tracking-[0.5px]">7.1 Cerdos Coins (Crypto-Loyalty)</h4>
+                        <ul class="list-none ml-0">
+                            <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]"><strong>Mining by Eating:</strong> Cada euro gastado "mina" 10 Cerdos Coins.</li>
+                            <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]"><strong>El HODL:</strong> Acumula para desbloquear items secretos del menú (Off-Menu) que el dinero fiat no puede comprar.</li>
+                        </ul>
+                    </div>
+                    <div class="mb-[25px] last:mb-0">
+                        <h4 class="text-gold-accent font-display text-[1.2rem] mb-2.5 uppercase tracking-[0.5px]">7.2 Rangos de la Secta</h4>
+                        <ul class="list-none ml-0">
+                            <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]"><strong>🐷 Lechón (Lvl 1):</strong> Acceso básico.</li>
+                            <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]"><strong>🐗 Jabalí (Lvl 10):</strong> Envío gratis los martes lluviosos.</li>
+                            <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]"><strong>👑 Santo Cerdo (Top 1%):</strong> Sudadera exclusiva "Founder Edition" + Acceso a catas de I+D.</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PARTE 8 -->
+            <article class="bg-panel-bg border border-panel-border rounded-none overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
+                <div class="p-5 border-b border-[#333] flex items-center justify-between bg-[#181818]">
+                    <div class="flex items-center gap-[15px]">
+                        <div class="w-10 h-10 flex items-center justify-center bg-[#222] text-neon-accent border border-[#333]"><i class="fas fa-eye"></i></div>
+                        <h3 class="font-display text-[1.8rem] text-white tracking-[1px] uppercase">8. Automatización Ofensiva (The Oracle)</h3>
+                    </div>
+                </div>
+                <div class="p-[25px]">
+                    <div class="mb-[25px] last:mb-0">
+                        <h4 class="text-gold-accent font-display text-[1.2rem] mb-2.5 uppercase tracking-[0.5px]">8.1 Predicción de Demanda</h4>
+                        <p class="mb-2.5 text-[0.95rem] text-[#ccc]">El sistema cruza datos históricos con APIs externas:</p>
+                        <ul class="list-none ml-0">
+                            <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]"><strong>🌧️ Lluvia Detectada:</strong> "Prepara +20% Packaging Delivery".</li>
+                            <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]"><strong>⚽ Partido Madrid-Barça:</strong> "Alerta: Pico de pedidos a las 20:45. Refuerza pre-cocción".</li>
+                        </ul>
+                    </div>
+                    <div class="mb-[25px] last:mb-0">
+                        <h4 class="text-gold-accent font-display text-[1.2rem] mb-2.5 uppercase tracking-[0.5px]">8.2 Social Sniper</h4>
+                        <p class="mb-2.5 text-[0.95rem] text-[#ccc]">Marketing sin manos. Conexión directa con Instagram API.</p>
+                        <ul class="list-none ml-0">
+                            <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]"><strong>Trigger "Escasez":</strong> Cuando quedan < 10 unidades de Brioche, publica Story automática: "⚠️ ÚLTIMAS 10 UNIDADES. CORRED."</li>
+                            <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]"><strong>Trigger "Lluvia":</strong> Publica Story: "¿Mojarte? Ni de coña. Pide Delivery."</li>
+                        </ul>
+                    </div>
+                    <div class="mb-[25px] last:mb-0">
+                        <h4 class="text-gold-accent font-display text-[1.2rem] mb-2.5 uppercase tracking-[0.5px]">8.3 Stock Predictivo (Escandallo Vivo)</h4>
+                        <p class="mb-2.5 text-[0.95rem] text-[#ccc]">1 Brioche vendido = 130g de carne descontados automáticamente. Alertas en tiempo real: "⚠️ Quedan 10kg de carne. Pide hoy o cierra mañana."</p>
+                    </div>
+                    <div class="mb-[25px] last:mb-0">
+                        <h4 class="text-gold-accent font-display text-[1.2rem] mb-2.5 uppercase tracking-[0.5px]">8.4 Burocracia Zero (Admin Droid)</h4>
+                        <p class="mb-2.5 text-[0.95rem] text-[#ccc]">Foto a la factura del carnicero y la IA (Dext) extrae datos, IVA y lo sube a contabilidad. Se acabaron los domingos picando datos en Excel.</p>
+                    </div>
+                </div>
+            </article>
+
+             <!-- PARTE 9 -->
              <article class="bg-panel-bg border border-panel-border rounded-none overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
                 <div class="p-5 border-b border-[#333] flex items-center justify-between bg-[#181818]">
                     <div class="flex items-center gap-[15px]">
                         <div class="w-10 h-10 flex items-center justify-center bg-[#222] text-neon-accent border border-[#333]"><i class="fas fa-chart-pie"></i></div>
-                        <h3 class="font-display text-[1.8rem] text-white tracking-[1px] uppercase">7. Post-Game (Analítica)</h3>
+                        <h3 class="font-display text-[1.8rem] text-white tracking-[1px] uppercase">9. Post-Game (Analítica)</h3>
                     </div>
                 </div>
                 <div class="p-[25px]">

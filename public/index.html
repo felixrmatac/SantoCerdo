@@ -8,36 +8,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto+Mono:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
-        /* Custom Chart Styles */
-        canvas {
-            max-width: 100%;
-        }
-    </style>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'bg-dark': '#121212',
-                        'panel-bg': '#1e1e1e',
-                        'panel-border': '#333333',
-                        'neon-accent': '#FF0099',
-                        'gold-accent': '#FFD700',
-                        'tech-green': '#00ff9d',
-                        'text-main': '#e0e0e0',
-                        'text-muted': '#888888',
-                    },
-                    fontFamily: {
-                        'display': ['Anton', 'sans-serif'],
-                        'body': ['Roboto Mono', 'monospace'],
-                    }
-                }
-            }
-        }
-    </script>
 </head>
 <body class="bg-bg-dark text-text-main font-body leading-relaxed overflow-x-hidden text-base">
 
@@ -81,7 +55,7 @@
                     <h4 class="text-gold-accent font-display text-[1.2rem] mb-3 uppercase">Los 4 Pilares de la Inversión</h4>
                     <ul class="space-y-3">
                         <li class="pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0">
-                            <strong class="text-white">Modelo Lean:</strong> Inversión inicial optimizada (42.100 €).
+                            <strong class="text-white">Modelo Lean:</strong> Inversión inicial optimizada (35.800 €).
                         </li>
                         <li class="pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0">
                             <strong class="text-white">Rentabilidad Disparada:</strong> Margen bruto >70% (Cocina propia in-house).
@@ -146,7 +120,7 @@
                             </tr>
                             <tr class="border-b border-[#333/50]">
                                 <td class="py-2">Maquinaria & Equipamiento</td>
-                                <td class="py-2 text-right">12.500 €</td>
+                                <td class="py-2 text-right">5.500 €</td>
                             </tr>
                             <tr class="border-b border-[#333/50]">
                                 <td class="py-2">Licencias y Marketing Inicial</td>
@@ -158,7 +132,7 @@
                             </tr>
                             <tr class="text-white font-bold bg-[#333/30]">
                                 <td class="py-3 pl-2">TOTAL REQUERIDO</td>
-                                <td class="py-3 text-right pr-2 text-gold-accent">42.100 €</td>
+                                <td class="py-3 text-right pr-2 text-gold-accent">35.800 €</td>
                             </tr>
                         </tbody>
                     </table>
@@ -225,6 +199,17 @@
                             <h4 class="text-white font-display uppercase mb-2 text-sm">Mobiliario</h4>
                             <p class="text-gold-accent font-bold text-xl">320 €</p>
                             <p class="text-xs text-[#666]">Estanterías, Mesa Horno, Extintor...</p>
+                        </div>
+                    </div>
+                    <div class="mt-4 border border-neon-accent p-4 bg-[#121212] relative">
+                        <div class="absolute top-0 right-0 bg-neon-accent text-white text-xs px-2 py-1 font-bold">AHORRO CLAVE</div>
+                        <h4 class="text-white font-display uppercase mb-2 text-sm">Desarrollo App "Santo Brain"</h4>
+                        <div class="flex justify-between items-end">
+                            <div>
+                                <p class="text-xs text-[#ccc]">Sistema de Pedidos, KDS y Fidelización (In-House)</p>
+                                <p class="text-xs text-[#666] mt-1">Valor de Mercado: ~20.000 €</p>
+                            </div>
+                            <p class="text-tech-green font-bold text-xl">Coste 0 €</p>
                         </div>
                     </div>
                 </div>
@@ -294,22 +279,67 @@
                 <div class="bg-[#121212] p-5 border border-[#333] relative overflow-hidden">
                     <div class="absolute top-0 right-0 bg-neon-accent text-white text-xs px-2 py-1 font-bold">SUPERVENTAS</div>
                     <h4 class="text-white font-display text-xl mb-2">A. BRIOCHE</h4>
-                    <div class="text-3xl font-display text-gold-accent mb-4">12,50 €</div>
+                    <div class="text-3xl font-display text-gold-accent mb-4">12,90 €</div>
                     <ul class="text-sm text-[#ccc] space-y-1">
                         <li>Coste Total: 2,27 €</li>
-                        <li>Margen Bruto: <span class="text-white font-bold">9,09 €</span></li>
-                        <li>Food Cost: 19,9%</li>
+                        <li>Margen Bruto: <span class="text-white font-bold">9,46 €</span></li>
+                        <li>Food Cost: 19,3%</li>
                     </ul>
                 </div>
                 <div class="bg-[#121212] p-5 border border-[#333] relative overflow-hidden">
                     <div class="absolute top-0 right-0 bg-gold-accent text-black text-xs px-2 py-1 font-bold">GOURMET</div>
                     <h4 class="text-white font-display text-xl mb-2">B. FOCACCIA</h4>
-                    <div class="text-3xl font-display text-gold-accent mb-4">13,50 €</div>
+                    <div class="text-3xl font-display text-gold-accent mb-4">12,90 €</div>
                     <ul class="text-sm text-[#ccc] space-y-1">
                         <li>Coste Total: 2,47 €</li>
-                        <li>Margen Bruto: <span class="text-white font-bold">9,80 €</span></li>
-                        <li>Food Cost: 20,1%</li>
+                        <li>Margen Bruto: <span class="text-white font-bold">9,26 €</span></li>
+                        <li>Food Cost: 21,0%</li>
                     </ul>
+                </div>
+            </div>
+        </article>
+
+        <!-- 8. ESTRATEGIA DIGITAL -->
+        <article class="bg-panel-bg border border-panel-border shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
+            <div class="p-5 border-b border-[#333] flex items-center gap-[15px] bg-[#181818]">
+                <div class="w-10 h-10 flex items-center justify-center bg-[#222] text-neon-accent border border-[#333]"><i class="fas fa-microchip"></i></div>
+                <h3 class="font-display text-[1.8rem] text-white tracking-[1px] uppercase">8. Ecosistema Tecnológico ("Santo Brain")</h3>
+            </div>
+            <div class="p-[25px] space-y-6">
+                <p class="text-[#ccc] text-sm mb-4">No es solo una hamburguesería, es una empresa tecnológica que vende comida. Nuestro SaaS propio optimiza dos frentes:</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- FRONT: VENTAS -->
+                    <div class="bg-[#121212] p-5 border border-[#333]">
+                        <h4 class="text-neon-accent font-display text-lg mb-3 uppercase"><i class="fas fa-rocket mr-2"></i> Motor de Ventas (Front)</h4>
+                        <ul class="space-y-3 text-sm">
+                            <li class="pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0">
+                                <strong class="text-white">Upselling AI:</strong> Algoritmo que sugiere extras, aumentando el ticket medio un <span class="text-tech-green font-bold">+15-20%</span>.
+                            </li>
+                            <li class="pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0">
+                                <strong class="text-white">Kiosco/QR:</strong> Autopedido total. Elimina colas y reduce coste de personal en caja.
+                            </li>
+                            <li class="pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0">
+                                <strong class="text-white">Loyalty:</strong> "Cerdos Coins" para gamificar la recurrencia.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- BACK: OPERACIONES -->
+                    <div class="bg-[#121212] p-5 border border-[#333]">
+                        <h4 class="text-gold-accent font-display text-lg mb-3 uppercase"><i class="fas fa-cogs mr-2"></i> Eficiencia (Back)</h4>
+                        <ul class="space-y-3 text-sm">
+                            <li class="pl-5 relative before:content-['>>'] before:text-gold-accent before:absolute before:left-0">
+                                <strong class="text-white">Middleware Delivery:</strong> Unifica Glovo/Uber en una pantalla. Cero errores humanos.
+                            </li>
+                            <li class="pl-5 relative before:content-['>>'] before:text-gold-accent before:absolute before:left-0">
+                                <strong class="text-white">Trazabilidad Térmica:</strong> Etiquetado automático de caducidades. Seguridad alimentaria total.
+                            </li>
+                            <li class="pl-5 relative before:content-['>>'] before:text-gold-accent before:absolute before:left-0">
+                                <strong class="text-white">Admin Droid:</strong> La IA escanea facturas y las contabiliza sola. Burocracia Zero.
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </article>
@@ -337,7 +367,7 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div class="p-4 bg-[#1a1a1a] border-l-2 border-neon-accent">
                             <h5 class="text-white font-bold">Fase 1: Recuperación (50/50)</h5>
-                            <p class="text-sm text-[#ccc] mt-1">Reparto equitativo hasta cubrir los 42.100€.</p>
+                            <p class="text-sm text-[#ccc] mt-1">Reparto equitativo hasta cubrir los 35.800€.</p>
                             <p class="text-sm text-neon-accent font-bold mt-1">Inversor: 1.382 €/mes</p>
                         </div>
                         <div class="p-4 bg-[#1a1a1a] border-l-2 border-gold-accent">
@@ -348,7 +378,7 @@
                     </div>
                     <div class="mt-4 text-center">
                         <span class="text-[#ccc]">PAYBACK ESTIMADO:</span>
-                        <span class="text-white font-bold text-xl ml-2">~21 Meses</span>
+                        <span class="text-white font-bold text-xl ml-2">~26 Meses</span>
                     </div>
                 </div>
             </div>
@@ -369,7 +399,7 @@
                     </div>
                     <div class="flex-1 bg-[#121212] p-5 border border-[#333]">
                         <h4 class="text-gold-accent font-display text-xl mb-2">INVERSOR</h4>
-                        <p class="text-sm text-[#ccc]">Aportación: 42.100 € (Cash).</p>
+                        <p class="text-sm text-[#ccc]">Aportación: 35.800 € (Cash).</p>
                         <p class="text-sm text-white mt-2 font-bold">Objetivo: Retorno < 3 años + Dividendo.</p>
                     </div>
                 </div>
@@ -421,7 +451,7 @@
                     </div>
                 </div>
 
-                <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                <div class="mt-8 grid grid-cols-1 md:grid-cols-4 gap-4 text-center">
                     <div class="p-3 border border-[#333] bg-[#1a1a1a]">
                         <div class="text-neon-accent font-display text-2xl">Mes 24</div>
                         <div class="text-xs text-[#ccc] uppercase mt-1">Apertura Unidad 2</div>
@@ -433,6 +463,10 @@
                     <div class="p-3 border border-[#333] bg-[#1a1a1a]">
                         <div class="text-white font-display text-2xl">15.000 €</div>
                         <div class="text-xs text-[#ccc] uppercase mt-1">Canon Entrada</div>
+                    </div>
+                    <div class="p-3 border border-[#333] bg-[#1a1a1a]">
+                        <div class="text-tech-green font-display text-2xl">250 €/mes</div>
+                        <div class="text-xs text-[#ccc] uppercase mt-1">Fee SaaS / Local</div>
                     </div>
                 </div>
             </div>

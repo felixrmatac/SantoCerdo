@@ -48,9 +48,25 @@ const TOC_STYLES = `
         z-index: 999;
         transform: translateX(-100%);
         transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        padding: 80px 20px 20px 20px; /* Top padding for close button space */
-        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
         backdrop-filter: blur(10px);
+    }
+
+    #sc-toc-header {
+        padding: 20px;
+        border-bottom: 1px solid #333;
+        background: rgba(10, 10, 10, 0.98);
+        flex-shrink: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #sc-toc-list {
+        overflow-y: auto;
+        flex-grow: 1;
+        padding: 20px;
     }
 
     @media (max-width: 768px) {
@@ -79,10 +95,8 @@ const TOC_STYLES = `
         font-family: 'Anton', sans-serif;
         color: #FFD700;
         text-transform: uppercase;
-        margin-bottom: 20px;
+        margin: 0;
         font-size: 1.5rem;
-        border-bottom: 1px solid #333;
-        padding-bottom: 10px;
         letter-spacing: 1px;
     }
 
@@ -169,22 +183,29 @@ class SantoTOC {
         this.sidebar = document.createElement('div');
         this.sidebar.id = 'sc-toc-sidebar';
         
-        // Close Button inside Sidebar
+        // Header Container (Sticky)
+        const headerDiv = document.createElement('div');
+        headerDiv.id = 'sc-toc-header';
+
+        // Title
+        const titleEl = document.createElement('h3');
+        titleEl.textContent = this.title;
+        headerDiv.appendChild(titleEl);
+
+        // Close Button
         const closeBtn = document.createElement('div');
         closeBtn.innerHTML = '<i class="fas fa-times"></i>';
         closeBtn.style.cssText = `
-            position: absolute;
-            top: 20px;
-            right: 20px;
             color: #FF0099;
             cursor: pointer;
             font-size: 1.2rem;
             padding: 5px;
         `;
         closeBtn.onclick = () => this.sidebar.classList.remove('open');
+        headerDiv.appendChild(closeBtn);
         
-        this.sidebar.appendChild(closeBtn);
-        this.sidebar.insertAdjacentHTML('beforeend', `<h3>${this.title}</h3><div id="sc-toc-list"></div>`);
+        this.sidebar.appendChild(headerDiv);
+        this.sidebar.insertAdjacentHTML('beforeend', `<div id="sc-toc-list"></div>`);
         
         document.body.appendChild(this.sidebar);
     }
