@@ -1,0 +1,54 @@
+<svg width="500" height="500" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur" />
+      <feGaussianBlur in="SourceGraphic" stdDeviation="12" result="blur2" />
+      <feMerge>
+        <feMergeNode in="blur2" />
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <style>
+      .neon-line {
+        fill: none;
+        stroke: #ff33cc; /* Color magenta neón */
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        filter: url(#neonGlow);
+      }
+      .neon-text {
+        font-family: 'Arial', sans-serif; /* Usamos una fuente estándar sans-serif */
+        font-weight: bold;
+        font-size: 42px;
+        fill: none;
+        stroke: #ff33cc;
+        stroke-width: 2;
+        text-anchor: middle;
+        filter: url(#neonGlow);
+      }
+      /* Fondo negro para visualizar el efecto */
+      .bg { fill: #000000; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="100%" height="100%" />
+
+  <g transform="translate(250, 250)">
+
+    <circle class="neon-line" cx="0" cy="0" r="210" stroke-width="4.5" />
+
+    <ellipse class="neon-line" cx="0" cy="-115" rx="55" ry="15" />
+
+    <path class="neon-line" d="M -55,-55 L -95,-75 L -80,-20 C -85,10 -70,75 0,75 C 70,75 85,10 80,-20 L 95,-75 L 55,-55 Q 0,-40 -55,-55 Z" />
+
+    <path class="neon-line" d="M -82,-20 Q -120,-40 -160,-35 Q -145,-25 -145,-15 Q -175,-5 -185,10 Q -165,20 -155,25 Q -180,45 -170,60 Q -130,55 -85,30" />
+    <g transform="scale(-1, 1)">
+      <path class="neon-line" d="M -82,-20 Q -120,-40 -160,-35 Q -145,-25 -145,-15 Q -175,-5 -185,10 Q -165,20 -155,25 Q -180,45 -170,60 Q -130,55 -85,30" />
+    </g>
+
+    <ellipse class="neon-line" cx="0" cy="25" rx="38" ry="26" /> <ellipse class="neon-line" cx="-14" cy="25" rx="5" ry="8" />  <ellipse class="neon-line" cx="14" cy="25" rx="5" ry="8" />   <circle class="neon-line" cx="-28" cy="-15" r="8" /> <circle class="neon-line" cx="28" cy="-15" r="8" />  <text class="neon-text" x="0" y="155">SANTO CERDO</text>
+  </g>
+</svg>
