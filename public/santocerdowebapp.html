@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SANTO CERDO | Web App v1.0</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'bg-dark': '#121212',
+                        'panel-bg': '#1e1e1e',
+                        'panel-border': '#333333',
+                        'neon-accent': '#FF0099',
+                        'gold-accent': '#FFD700',
+                        'tech-green': '#00ff9d',
+                        'text-main': '#e0e0e0',
+                        'text-muted': '#888888',
+                    },
+                    fontFamily: {
+                        'display': ['Anton', 'sans-serif'],
+                        'body': ['Roboto Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-bg-dark text-text-main font-body leading-relaxed overflow-x-hidden text-base">
+
+    <!-- Navigation -->
+    <nav class="flex flex-wrap justify-center gap-3 md:gap-5 py-4 px-4 bg-[#1a1a1a] border-b border-[#333]">
+        <a href="index.html" class="text-text-muted hover:text-white font-display uppercase tracking-wider transition-colors text-sm md:text-base">Investor Deck</a>
+        <span class="text-[#333] hidden md:inline">|</span>
+        <a href="santocerdowebapp.html" class="text-neon-accent font-display uppercase tracking-wider border-b-2 border-neon-accent text-sm md:text-base">Santo Cerdo Brain</a>
+        <span class="text-[#333] hidden md:inline">|</span>
+        <a href="plan_viewer.html" class="text-text-muted hover:text-white font-display uppercase tracking-wider transition-colors text-sm md:text-base">Plan (MD)</a>
+        <span class="text-[#333] hidden md:inline">|</span>
+        <a href="plan_viewer_lean.html" class="text-text-muted hover:text-white font-display uppercase tracking-wider transition-colors text-sm md:text-base">Lean Plan (MD)</a>
+    </nav>
+
+    <header class="py-10 md:py-[60px] px-5 text-center bg-[radial-gradient(circle_at_center,_#2a1a2a_0%,_#121212_100%)] border-b-2 border-neon-accent">
+        <h1 class="font-display text-5xl md:text-[4rem] uppercase tracking-[2px] mb-2.5 text-white drop-shadow-[0_0_10px_rgba(255,0,153,0.5)]">SANTO CERDO</h1>
+        <div class="text-gold-accent text-base md:text-[1.1rem] tracking-[1px] max-w-[800px] mx-auto">Web App v1.0</div>
+        
+        <div class="mt-8 max-w-[600px] mx-auto text-left text-sm text-[#ccc] space-y-2 font-body border border-[#333] p-4 bg-[#1a1a1a]">
+            <p><strong class="text-neon-accent">Concepto:</strong> Sistema Operativo Gastronómico Unipersonal (SaaS) - Modelo Pure Take-Away.</p>
+            <p><strong class="text-neon-accent">Arquitectura:</strong> SPA + Infraestructura Física Fail-Safe.</p>
+            <p><strong class="text-neon-accent">Misión:</strong> Un organismo vivo que protege al piloto del colapso, maximiza el flujo de caja y aprende de cada servicio.</p>
+        </div>
+    </header>
+
+    <div class="max-w-[800px] mx-auto my-10 px-5">
+        
+        <div class="border-l-[3px] border-neon-accent bg-[rgba(255,0,153,0.05)] p-[15px] my-[15px] italic text-white text-center border border-gold-accent bg-transparent">
+            FILOSOFÍA: "HIGH TECH, HIGH TOUCH, ZERO FRICTION"
+        </div>
+
+        <div class="flex flex-col gap-[30px]">
+
+            <!-- PARTE 1 -->
+            <article class="bg-panel-bg border border-panel-border rounded-none overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
+                <div class="p-5 border-b border-[#333] flex items-center justify-between bg-[#181818]">
+                    <div class="flex items-center gap-[15px]">
+                        <div class="w-10 h-10 flex items-center justify-center bg-[#222] text-neon-accent border border-[#333]"><i class="fas fa-paint-brush"></i></div>
+                        <h3 class="font-display text-[1.8rem] text-white tracking-[1px] uppercase">1. Identidad y Alma</h3>
+                    </div>
+                </div>
+                <div class="p-[25px]">
+                    <div class="mb-[25px] last:mb-0">
+                        <p class="mb-2.5 text-[0.95rem] text-[#ccc]">Diseñado para la noche, la velocidad y la seducción. Sin esto, solo somos una cocina fantasma más.</p>
+                    </div>
+                    <div class="mb-[25px] last:mb-0">
+                        <h4 class="text-gold-accent font-display text-[1.2rem] mb-2.5 uppercase tracking-[0.5px]">1.1 Identidad Visual</h4>
+                        <ul class="list-none ml-0">
+                            <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]"><strong>Fondo:</strong> #121212 (Negro Carbón). Modo oscuro absoluto.</li>
+                            <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]"><strong>Acento Acción:</strong> <span class="text-neon-accent font-bold">#FF0099 (Neon Pig)</span>. Botones de compra y alertas.</li>
+                            <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]"><strong>Acento Dinero:</strong> <span class="text-gold-accent font-bold">#FFD700 (Dorado Brioche)</span>. Precios y upselling.</li>
+                        </ul>
+                    </div>
+                    <div class="mb-[25px] last:mb-0">
+                        <h4 class="text-gold-accent font-display text-[1.2rem] mb-2.5 uppercase tracking-[0.5px]">1.2 Tipografía de Combate</h4>
+                        <ul class="list-none ml-0">
+                            <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]"><strong>ANTON:</strong> Gritos/Titulares. Grande, mayúsculas.</li>
+                            <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]"><strong>Roboto Mono:</strong> Datos/Tiempos. Técnica, fría.</li>
+                        </ul>
+                    </div>
+                    <div class="mb-[25px] last:mb-0">
+                        <h4 class="text-gold-accent font-display text-[1.2rem] mb-2.5 uppercase tracking-[0.5px]">1.3 Tono de Voz</h4>
+                        <p class="mb-2.5 text-[0.95rem] text-[#ccc]">Personalidad: Canalla, directo, irreverente. Jamás pedimos "por favor".</p>
+                        <div class="border-l-[3px] border-neon-accent bg-[rgba(255,0,153,0.05)] p-[15px] my-[15px] italic text-white">
+                            <span class="text-[#ff4444] line-through opacity-70">Mal: "Disculpe las molestias, no nos quedan patatas".</span><br>
+                            <span class="text-tech-green">Bien: "🥔 MUNICIÓN AGOTADA. Las chips han volado. O traes las tuyas o comes a palo seco."</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PARTE 2 -->
+            <article class="bg-panel-bg border border-panel-border rounded-none overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
+                <div class="p-5 border-b border-[#333] flex items-center justify-between bg-[#181818]">
+                    <div class="flex items-center gap-[15px]">
+                        <div class="w-10 h-10 flex items-center justify-center bg-[#222] text-neon-accent border border-[#333]"><i class="fas fa-shield-alt"></i></div>
+                        <h3 class="font-display text-[1.8rem] text-white tracking-[1px] uppercase">2. La Fortaleza</h3>
+                    </div>
+                </div>
+                <div class="p-[25px]">
+                    <div class="mb-[25px] last:mb-0">
+                        <p class="mb-2.5 text-[0.95rem] text-[#ccc]">Infraestructura Crítica. El negocio no puede morir porque Telefónica tenga un mal día.</p>
+                    </div>
+                    <div class="mb-[25px] last:mb-0">
+                        <h4 class="text-gold-accent font-display text-[1.2rem] mb-2.5 uppercase tracking-[0.5px]">2.1 El Cortafuegos (Red Fail-Safe)</h4>
+                        <ul class="list-none ml-0">
+                            <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]"><strong>Hardware:</strong> Router Industrial 4G/5G con SIM propia.</li>
+                            <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]"><strong>Protocolo:</strong> Si la fibra cae, el 4G entra en 0.2 segundos.</li>
+                            <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]"><strong>Objetivo:</strong> Stripe y Supabase nunca pierden conexión.</li>
+                        </ul>
+                    </div>
+                    <div class="mb-[25px] last:mb-0">
+                        <h4 class="text-gold-accent font-display text-[1.2rem] mb-2.5 uppercase tracking-[0.5px]">2.2 Gestión del Flujo Físico</h4>
+                        <ul class="list-none ml-0">
+                            <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]"><strong>El Carril Rápido (Muro QR):</strong> Vinilo gigante. "Salta la cola".</li>
+                            <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]"><strong>Señalética de Suelo:</strong>
+                                <ul class="list-none ml-0">
+                                    <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]">Línea A: "👇 PIDE AQUÍ" (Kiosco).</li>
+                                    <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]">Línea B: "🥡 ESPERA TU DROGA AQUÍ" (Recogida).</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PARTE 3 -->
+            <article class="bg-panel-bg border border-panel-border rounded-none overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
+                <div class="p-5 border-b border-[#333] flex items-center justify-between bg-[#181818]">
+                    <div class="flex items-center gap-[15px]">
+                        <div class="w-10 h-10 flex items-center justify-center bg-[#222] text-neon-accent border border-[#333]"><i class="fas fa-mobile-alt"></i></div>
+                        <h3 class="font-display text-[1.8rem] text-white tracking-[1px] uppercase">3. La Interfaz Cliente</h3>
+                    </div>
+                </div>
+                <div class="p-[25px]">
+                    <div class="mb-[25px] last:mb-0">
+                        <h4 class="text-gold-accent font-display text-[1.2rem] mb-2.5 uppercase tracking-[0.5px]">3.1 Barrera de Entrada & Pricing</h4>
+                        <ul class="list-none ml-0">
+                            <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]"><strong>Precio Digital (11€):</strong> Recompensa por autoservicio.</li>
+                            <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]"><strong>Tarifa Analógica (12€):</strong> "Multa" (+1€) por usar tiempo humano.</li>
+                        </ul>
+                    </div>
+                    <div class="mb-[25px] last:mb-0">
+                        <h4 class="text-gold-accent font-display text-[1.2rem] mb-2.5 uppercase tracking-[0.5px]">3.2 Upselling Agresivo</h4>
+                        <ul class="list-none ml-0">
+                            <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]"><strong>🍔 La Ruleta del Hambre:</strong> Selección aleatoria.</li>
+                            <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]"><strong>🍟 Reto al Ego:</strong> "¿Vas a dejar que esa burger se vaya sola a casa?"</li>
+                            <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]"><strong>📦 Selector de Logística:</strong><br>Opción A: 🥡 Bolsa (Precintada).<br>Opción B: 🏃 Comer Andando (En mano, sin bolsa. Ahorra 20s de packing y 0,50€).</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PARTE 4 -->
+            <article class="bg-panel-bg border border-panel-border rounded-none overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
+                <div class="p-5 border-b border-[#333] flex items-center justify-between bg-[#181818]">
+                    <div class="flex items-center gap-[15px]">
+                        <div class="w-10 h-10 flex items-center justify-center bg-[#222] text-neon-accent border border-[#333]"><i class="fas fa-brain"></i></div>
+                        <h3 class="font-display text-[1.8rem] text-white tracking-[1px] uppercase">4. El Cerebro</h3>
+                    </div>
+                </div>
+                <div class="p-[25px]">
+                    <div class="mb-[25px] last:mb-0">
+                        <p class="mb-2.5 text-[0.95rem] text-[#ccc]">El sistema no cuenta tickets, cuenta <strong>ESTRÉS ACUMULADO</strong>.</p>
+                        <div class="border-l-[3px] border-neon-accent bg-[rgba(255,0,153,0.05)] p-[15px] my-[15px] italic text-white font-display text-[1.2rem]">
+                            Fricción Total = Puntos Base × Factor Piloto × Factor Lote
+                        </div>
+                    </div>
+                    <div class="mb-[25px] last:mb-0">
+                        <h4 class="text-gold-accent font-display text-[1.2rem] mb-2.5 uppercase tracking-[0.5px]">4.1 Variables</h4>
+                        <ul class="list-none ml-0">
+                            <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]"><strong>Puntos Base:</strong> Chips (0.15) vs Burger Custom (1.20).</li>
+                            <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]"><strong>Factor Piloto:</strong> Novato (x1.2) vs Veterano (x0.9).</li>
+                            <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]"><strong>Factor Lote:</strong> Zona Colapso (>10 items) dispara el estrés x1.5.</li>
+                        </ul>
+                    </div>
+                    <div class="mb-[25px] last:mb-0">
+                        <h4 class="text-gold-accent font-display text-[1.2rem] mb-2.5 uppercase tracking-[0.5px]">4.2 Módulo Defensa ("El Portero")</h4>
+                        <p class="mb-2.5 text-[0.95rem] text-[#ccc]">Si se supera el umbral, el Kiosco muestra: "Cocina a tope. Tu pedido entrará en cola en X min".</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PARTE 5 -->
+            <article class="bg-panel-bg border border-panel-border rounded-none overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
+                <div class="p-5 border-b border-[#333] flex items-center justify-between bg-[#181818]">
+                    <div class="flex items-center gap-[15px]">
+                        <div class="w-10 h-10 flex items-center justify-center bg-[#222] text-neon-accent border border-[#333]"><i class="fas fa-gamepad"></i></div>
+                        <h3 class="font-display text-[1.8rem] text-white tracking-[1px] uppercase">5. Hardware Táctico</h3>
+                    </div>
+                </div>
+                <div class="p-[25px]">
+                    <div class="mb-[25px] last:mb-0">
+                        <h4 class="text-gold-accent font-display text-[1.2rem] mb-2.5 uppercase tracking-[0.5px]">5.1 Módulo KDS</h4>
+                        <p class="mb-2.5 text-[0.95rem] text-[#ccc]">Muestra el <strong>Friction Score</strong> en lugar del precio. Cronómetro gamificado: 🟢 Verde (<3m) / 🟠 Naranja / 🔴 Rojo (>5m).</p>
+                    </div>
+                    <div class="mb-[25px] last:mb-0">
+                        <h4 class="text-gold-accent font-display text-[1.2rem] mb-2.5 uppercase tracking-[0.5px]">5.2 La Botonera Arcade (IoT)</h4>
+                        <p class="mb-2.5 text-[0.95rem] text-[#ccc]">Hardware físico oculto bajo barra:</p>
+                        <div class="mt-[15px]">
+                            <p class="mb-2.5 text-[0.95rem] text-[#ccc]"><span class="inline-block py-[5px] px-[10px] rounded font-bold text-black mr-[5px] text-[0.8rem] uppercase bg-tech-green shadow-[0_0_10px_#00ff9d]">VERDE</span> <strong>BIO-BREAK:</strong> Pausa técnica inmediata.</p>
+                            <p class="mb-2.5 text-[0.95rem] text-[#ccc]"><span class="inline-block py-[5px] px-[10px] rounded font-bold text-black mr-[5px] text-[0.8rem] uppercase bg-gold-accent shadow-[0_0_10px_#ffd700]">AMARILLO</span> <strong>STOCK:</strong> Cierra ventas 10 min.</p>
+                            <p class="mb-2.5 text-[0.95rem] text-[#ccc]"><span class="inline-block py-[5px] px-[10px] rounded font-bold text-black mr-[5px] text-[0.8rem] uppercase bg-[#ff0055] shadow-[0_0_10px_#ff0055] text-white">ROJO</span> <strong>FLAG ESTRÉS:</strong> Marca momento para Machine Learning.</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PARTE 6 -->
+            <article class="bg-panel-bg border border-panel-border rounded-none overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
+                <div class="p-5 border-b border-[#333] flex items-center justify-between bg-[#181818]">
+                    <div class="flex items-center gap-[15px]">
+                        <div class="w-10 h-10 flex items-center justify-center bg-[#222] text-neon-accent border border-[#333]"><i class="fas fa-book-dead"></i></div>
+                        <h3 class="font-display text-[1.8rem] text-white tracking-[1px] uppercase">6. Playbook & Escenarios</h3>
+                    </div>
+                </div>
+                <div class="p-[25px]">
+                    <div class="mb-[25px] last:mb-0">
+                        <ul class="list-none ml-0">
+                            <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]"><strong>⚡ Modo Dios:</strong> Ignora el "Portero" durante 15 min. Mensaje KDS: "⚠️ SEGURIDAD DESACTIVADA. VUELAS SOLO."</li>
+                            <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]"><strong>🟢 El Bio-Break:</strong> Pantallas muestran cronómetro gigante. Copy: "PAUSA TÉCNICA DEL PILOTO. Reabasteciendo fluidos. Volvemos en 4:59."</li>
+                            <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]"><strong>🔴 Entrenamiento de la Bestia:</strong> El sistema aprende qué combinaciones te estresan.</li>
+                            <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]"><strong>💀 La Guillotina:</strong> Long-press elimina item del menú. IA Táctica: "💀 ALERTA ZOMBIE: Quedan las últimas 8 burgers. Corred."</li>
+                            <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]"><strong>🗣️ IA Táctica:</strong> Genera copy empático/gracioso para las pantallas de espera, reduciendo la ansiedad de la cola.</li>
+                            <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]"><strong>🔌 El Apagón:</strong> Datáfono GPRS + Rotulador. Tarifa Analógica activa.</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+
+             <!-- PARTE 7 -->
+             <article class="bg-panel-bg border border-panel-border rounded-none overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
+                <div class="p-5 border-b border-[#333] flex items-center justify-between bg-[#181818]">
+                    <div class="flex items-center gap-[15px]">
+                        <div class="w-10 h-10 flex items-center justify-center bg-[#222] text-neon-accent border border-[#333]"><i class="fas fa-chart-pie"></i></div>
+                        <h3 class="font-display text-[1.8rem] text-white tracking-[1px] uppercase">7. Post-Game (Analítica)</h3>
+                    </div>
+                </div>
+                <div class="p-[25px]">
+                    <div class="mb-[25px] last:mb-0">
+                        <p class="mb-2.5 text-[0.95rem] text-[#ccc]">Al cerrar, recibes el "Damage Report":</p>
+                        <ul class="list-none ml-0">
+                            <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]"><strong>Coste de Oportunidad:</strong> Dinero perdido por "La Guillotina".</li>
+                            <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]"><strong>Mapa de Calor de Estrés:</strong> Cuándo pulsaste el Botón Rojo.</li>
+                            <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]"><strong>Takt Time Real:</strong> Velocidad real vs. Teórica.</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </div>
+
+    <footer class="mt-[60px] p-10 border-t border-[#333] text-center text-[#555] text-[0.8rem]">
+        <p>SANTO CERDO v7.0 // DEFINITIVE EDITION</p>
+        <p class="text-neon-accent mt-[10px]">A COCINAR. 🔥🐷</p>
+    </footer>
+
+    <script src="toc.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Ensure headers have IDs for TOC to work
+            // Using a more generic selector to ensure we catch the headers
+            const headers = document.querySelectorAll('h3');
+            headers.forEach((header, index) => {
+                if (!header.id) header.id = 'manual-section-' + index;
+            });
+
+            new SantoTOC({
+                contentSelector: 'body', // Broaden scope to ensure it finds content
+                headerSelector: 'h3',
+                title: 'CO-PILOTO DIGITAL'
+            });
+        });
+    </script>
+
+</body>
+</html>
