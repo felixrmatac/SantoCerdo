@@ -221,7 +221,12 @@ class SantoTOC {
 
             link.addEventListener('click', (e) => {
                 e.preventDefault();
-                // Removed: this.sidebar.classList.remove('open'); // Keep open
+                
+                // Close sidebar on mobile only (<= 768px)
+                if (window.innerWidth <= 768) {
+                    this.sidebar.classList.remove('open');
+                    this.toggleBtn.classList.remove('hidden');
+                }
                 
                 const target = document.getElementById(header.id);
                 target.scrollIntoView({ behavior: 'smooth' });
