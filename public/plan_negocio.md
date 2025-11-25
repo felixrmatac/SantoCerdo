@@ -10,7 +10,7 @@
 
 * **Concepto:** Pulled Pork & Focaccia Lab.  
 * **Propuesta:** La sofisticación del "Slow Food" con la velocidad operativa del "Fast Casual".  
-* **Slogan:** "Más que un Kebab, más rápido que un Restaurante".
+* **Slogan:** "Good Food Fast".
 
 ### Branding e Identidad Visual
 
@@ -253,7 +253,7 @@ Para cubrir gastos y no perder dinero (Beneficio 0€), necesitamos:
 
 ### Hoja de Ruta
 * **Año 1 (Validación):** Validación del modelo y liquidez para el Gestor (Sueldo + 50% beneficio). Beneficio total: 2.800€/mes.
-* **Año 2 (Payback):** Aceleración del retorno al Inversor (100% del beneficio destinado a devolver la inversión). Recuperación total en ~26 meses.
+* **Año 2 (Payback):** Aceleración del retorno al Inversor (100% del beneficio destinado a devolver la inversión). Recuperación total en ~23 meses.
 * **Año 3 (Expansión):** Apertura de la **Unidad 2** aprovechando la capacidad sobrante del horno principal (Cocina Central).
 * **Año 4-5 (Franquicia):** Lanzamiento del modelo de franquicia.
     * **Canon de Entrada:** 15.000 €.

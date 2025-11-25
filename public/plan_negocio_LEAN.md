@@ -10,7 +10,7 @@
 **Santo Cerdo** elabora sándwiches de cerdo desmenuzado (pulled pork) de alta calidad y cocción lenta para profesionales urbanos y amantes de la comida[cite: 1].
 * **Concepto:** Pulled Pork & Focaccia Lab.
 * **Arquetipo:** "Canalla Gourmet" – La sofisticación del Slow Food con la velocidad del Fast Casual.
-* **Slogan:** "Más que un Kebab, más rápido que un Restaurante".
+* **Slogan:** "Good Food Fast".
 
 ## Problema
 Padres, oficinistas y jóvenes adultos buscan comidas de alta calidad y consistentes que se adapten a un estilo de vida ajetreado, pero rechazan la comida rápida industrial[cite: 1].
