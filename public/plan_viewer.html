@@ -15,16 +15,41 @@
 </head>
 <body class="bg-bg-dark text-text-main font-body leading-relaxed overflow-x-hidden text-base">
 
-    <!-- Navigation -->
-    <nav class="sticky top-0 z-50 flex flex-wrap justify-center gap-3 md:gap-5 py-4 px-4 bg-[#1a1a1a] border-b border-[#333] shadow-lg">
-        <a href="index.html" class="text-text-muted hover:text-white font-display uppercase tracking-wider transition-colors text-sm md:text-base">Investor Deck</a>
-        <span class="text-[#333] hidden md:inline">|</span>
-        <a href="santocerdowebapp.html" class="text-text-muted hover:text-white font-display uppercase tracking-wider transition-colors text-sm md:text-base">Santo Cerdo Brain</a>
-        <span class="text-[#333] hidden md:inline">|</span>
-        <a href="plan_viewer.html" class="text-neon-accent font-display uppercase tracking-wider border-b-2 border-neon-accent text-sm md:text-base">Plan (MD Viewer)</a>
-        <span class="text-[#333] hidden md:inline">|</span>
-        <a href="plan_viewer_lean.html" class="text-text-muted hover:text-white font-display uppercase tracking-wider transition-colors text-sm md:text-base">Lean Plan (MD)</a>
-    </nav>
+        <!-- Shared header (loaded from _header.html) -->
+        <div id="site-header"></div>
+        <script>
+        (function(){
+            function insertHeader(html){
+                var container = document.getElementById('site-header');
+                if(container) container.innerHTML = html;
+            }
+            function highlightActive(){
+                try{
+                    var links = document.querySelectorAll('#site-header .nav-link');
+                    var current = window.location.pathname.split('/').pop();
+                    if(!current) current = 'index.html';
+                    links.forEach(function(a){
+                        a.classList.remove('text-neon-accent');
+                        a.classList.add('text-text-muted');
+                        var href = a.getAttribute('href');
+                        if(href === current || (href === 'index.html' && current === '')){
+                            a.classList.remove('text-text-muted');
+                            a.classList.add('text-neon-accent');
+                        }
+                    });
+                }catch(e){ console.warn('Highlight header error', e); }
+            }
+            fetch('_header.html').then(function(resp){
+                if(!resp.ok) throw new Error('Header fetch failed');
+                return resp.text();
+            }).then(function(text){
+                insertHeader(text);
+                highlightActive();
+            }).catch(function(){
+                // fallback: nothing
+            });
+        })();
+        </script>
 
     <div class="max-w-[900px] mx-auto my-6 md:my-10 px-4 md:px-5">
         <div class="bg-panel-bg border border-panel-border shadow-[0_4px_20px_rgba(0,0,0,0.5)] p-4 md:p-8 min-h-[80vh]">

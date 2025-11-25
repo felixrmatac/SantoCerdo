@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SANTO CERDO | Santo Brain Viewer (MD)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        /* minor visual parity tweaks to match other viewer pages */
+    </style>
+</head>
+<body class="bg-bg-dark text-text-main font-body leading-relaxed overflow-x-hidden text-base">
+
+    <!-- Shared header (loaded from _header.html) -->
+    <div id="site-header"></div>
+        <script>
+        (function(){
+            function insertHeader(html){
+                var container = document.getElementById('site-header');
+                if(container) container.innerHTML = html;
+            }
+            function highlightActive(){
+                try{
+                    var links = document.querySelectorAll('#site-header .nav-link');
+                    var current = window.location.pathname.split('/').pop();
+                    if(!current) current = 'index.html';
+                    links.forEach(function(a){
+                        a.classList.remove('text-neon-accent');
+                        a.classList.add('text-text-muted');
+                        var href = a.getAttribute('href');
+                        if(href === current || (href === 'index.html' && current === '')){
+                            a.classList.remove('text-text-muted');
+                            a.classList.add('text-neon-accent');
+                        }
+                    });
+                }catch(e){ console.warn('Highlight header error', e); }
+            }
+            fetch('_header.html').then(function(resp){
+                if(!resp.ok) throw new Error('Header fetch failed');
+                return resp.text();
+            }).then(function(text){
+                insertHeader(text);
+                highlightActive();
+            }).catch(function(){
+                // fallback: nothing
+            });
+        })();
+        </script>
+
+    <div class="max-w-[900px] mx-auto my-6 md:my-10 px-4 md:px-5">
+        <div class="bg-panel-bg border border-panel-border shadow-[0_4px_20px_rgba(0,0,0,0.5)] p-4 md:p-8 min-h-[80vh]">
+            <div class="flex justify-between items-center mb-6 border-b border-[#333] pb-4">
+                <div class="text-xs text-[#666] uppercase tracking-widest">Source: public/santo_brain.md</div>
+                <a href="santo_brain.md" target="_blank" class="text-xs text-neon-accent hover:text-white uppercase tracking-widest border border-neon-accent px-3 py-1 hover:bg-neon-accent transition-all">Ver Raw</a>
+            </div>
+            
+            <div id="markdown-content" class="animate-pulse">
+                Cargando contenido de Santo Brain...
+            </div>
+            
+            <div id="error-message" class="hidden mt-4 p-4 border border-red-500 bg-red-900/20 text-red-400 text-sm">
+                <p class="font-bold mb-2"> Error de carga</p>
+                <p>No se pudo cargar el archivo Markdown. Esto suele ocurrir por políticas de seguridad del navegador (CORS) si abres el archivo directamente.</p>
+                <p class="mt-2 text-white">Solución: Usa "Live Server" en VS Code o abre este archivo a través de un servidor local (localhost).</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="toc.js"></script>
+    <script>
+        fetch('santo_brain.md')
+            .then(response => {
+                if (!response.ok) throw new Error("HTTP error " + response.status);
+                return response.text();
+            })
+            .then(text => {
+                document.getElementById('markdown-content').innerHTML = marked.parse(text);
+                document.getElementById('markdown-content').classList.remove('animate-pulse');
+                
+                // Initialize TOC after content load
+                new SantoTOC({
+                    contentSelector: '#markdown-content',
+                    headerSelector: 'h2',
+                    title: 'SANTO BRAIN'
+                });
+            })
+            .catch(err => {
+                console.error('Error loading markdown:', err);
+                document.getElementById('markdown-content').style.display = 'none';
+                document.getElementById('error-message').classList.remove('hidden');
+            });
+    </script>
+
+</body>
+</html>

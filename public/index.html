@@ -12,19 +12,80 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+    /* Modal zoom styles */
+    .zoom-modal-bg {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0,0,0,0.85);
+        justify-content: center;
+        align-items: center;
+    }
+    .zoom-modal-bg.active {
+        display: flex;
+    }
+    .zoom-modal-img {
+        max-width: 90vw;
+        max-height: 90vh;
+        border-radius: 12px;
+        box-shadow: 0 0 40px #000a;
+        border: 4px solid #FFD700;
+        background: #222;
+    }
+    .zoom-modal-close {
+        position: absolute;
+        top: 30px;
+        right: 40px;
+        font-size: 2.5rem;
+        color: #FFD700;
+        cursor: pointer;
+        z-index: 1100;
+        text-shadow: 0 2px 10px #000;
+    }
+    </style>
 </head>
 <body class="bg-bg-dark text-text-main font-body leading-relaxed overflow-x-hidden text-base">
 
-    <!-- Navigation -->
-    <nav class="sticky top-0 z-50 flex flex-wrap justify-center gap-3 md:gap-5 py-4 px-4 bg-[#1a1a1a] border-b border-[#333] shadow-lg">
-        <a href="index.html" class="text-neon-accent font-display uppercase tracking-wider border-b-2 border-neon-accent text-sm md:text-base">Investor Deck</a>
-        <span class="text-[#333] hidden md:inline">|</span>
-        <a href="santocerdowebapp.html" class="text-text-muted hover:text-white font-display uppercase tracking-wider transition-colors text-sm md:text-base">Santo Cerdo Brain</a>
-        <span class="text-[#333] hidden md:inline">|</span>
-        <a href="plan_viewer.html" class="text-text-muted hover:text-white font-display uppercase tracking-wider transition-colors text-sm md:text-base">Plan (MD)</a>
-        <span class="text-[#333] hidden md:inline">|</span>
-        <a href="plan_viewer_lean.html" class="text-text-muted hover:text-white font-display uppercase tracking-wider transition-colors text-sm md:text-base">Lean Plan (MD)</a>
-    </nav>
+        <!-- Shared header (loaded from _header.html) -->
+        <div id="site-header"></div>
+        <script>
+        (function(){
+            function insertHeader(html){
+                var container = document.getElementById('site-header');
+                if(container) container.innerHTML = html;
+            }
+            function highlightActive(){
+                try{
+                    var links = document.querySelectorAll('#site-header .nav-link');
+                    var current = window.location.pathname.split('/').pop();
+                    if(!current) current = 'index.html';
+                    links.forEach(function(a){
+                        a.classList.remove('text-neon-accent');
+                        a.classList.add('text-text-muted');
+                        var href = a.getAttribute('href');
+                        if(href === current || (href === 'index.html' && current === '')){
+                            a.classList.remove('text-text-muted');
+                            a.classList.add('text-neon-accent');
+                        }
+                    });
+                }catch(e){ console.warn('Highlight header error', e); }
+            }
+            fetch('_header.html').then(function(resp){
+                if(!resp.ok) throw new Error('Header fetch failed');
+                return resp.text();
+            }).then(function(text){
+                insertHeader(text);
+                highlightActive();
+            }).catch(function(){
+                // fallback: nothing
+            });
+        })();
+        </script>
 
     <header class="py-10 md:py-[60px] px-5 text-center bg-[radial-gradient(circle_at_center,_#2a1a2a_0%,_#121212_100%)] border-b-2 border-gold-accent">
         <h1 class="font-display text-5xl md:text-[4rem] uppercase tracking-[2px] mb-2.5 text-white drop-shadow-[0_0_10px_rgba(255,215,0,0.5)]">SANTO CERDO</h1>
@@ -105,8 +166,8 @@
                     <table class="w-full text-left text-sm border-collapse">
                         <thead>
                             <tr class="border-b border-[#333] text-neon-accent">
-                                <th class="py-2 uppercase font-display">Concepto</th>
-                                <th class="py-2 text-right uppercase font-display">Inversión</th>
+                                <th class="py-2 uppercase font-body font-bold">Concepto</th>
+                                <th class="py-2 text-right uppercase font-body font-bold">Inversión</th>
                             </tr>
                         </thead>
                         <tbody class="text-[#ccc]">
@@ -193,7 +254,7 @@
                         <div class="border border-[#333] p-4 bg-[#121212]">
                             <h4 class="text-white font-display uppercase mb-2 text-sm">Utensilios</h4>
                             <p class="text-gold-accent font-bold text-xl">368 €</p>
-                            <p class="text-xs text-[#666]">Mandolina, Soplete, Cubetas GN, Cuchillos...</p>
+                            <p class="text-xs text-[#666]">Mandolina, Soplete, Cubetas GN, Cuchillos, Varios...</p>
                         </div>
                         <div class="border border-[#333] p-4 bg-[#121212]">
                             <h4 class="text-white font-display uppercase mb-2 text-sm">Mobiliario</h4>
@@ -229,8 +290,8 @@
                     <table class="w-full text-left text-sm border-collapse">
                         <thead>
                             <tr class="border-b border-[#333] text-neon-accent">
-                                <th class="py-2 uppercase font-display">Partida</th>
-                                <th class="py-2 text-right uppercase font-display">Coste Mensual</th>
+                                <th class="py-2 uppercase font-body font-bold">Partida</th>
+                                <th class="py-2 text-right uppercase font-body font-bold">Coste Mensual</th>
                             </tr>
                         </thead>
                         <tbody class="text-[#ccc]">
@@ -255,8 +316,8 @@
                                 <td class="py-2 text-right">1.650 €</td>
                             </tr>
                             <tr class="border-b border-[#333/50]">
-                                <td class="py-2">Gestión y Marketing</td>
-                                <td class="py-2 text-right">680 €</td>
+                                <td class="py-2">Gestión y Marketing (Guerrilla)</td>
+                                <td class="py-2 text-right">380 €</td>
                             </tr>
                         </tbody>
                     </table>
@@ -340,6 +401,11 @@
                             </li>
                         </ul>
                     </div>
+                    <div class="mb-4 justify-center md:flex md:col-span-2">
+                    <a href="santocerdowebapp.html" class="inline-block bg-neon-accent text-white font-bold px-4 py-2 rounded shadow hover:bg-pink-600 transition-colors" target="_blank" rel="noopener">
+                        Ir a Santo Cerdo Brain WebApp &rarr;
+                    </a>
+                </div>
                 </div>
             </div>
         </article>
@@ -354,12 +420,26 @@
                 <div class="bg-[#121212] p-5 border border-tech-green/30">
                     <div class="flex justify-between items-end mb-2">
                         <span class="text-[#ccc] uppercase text-sm">Beneficio Neto Mensual (Impuestos 15%)</span>
-                        <span class="text-tech-green font-display text-3xl">2.764 €</span>
+                        <span class="text-tech-green font-display text-3xl">3.019 €</span>
                     </div>
                     <div class="w-full bg-[#333] h-2 rounded-full overflow-hidden">
-                        <div class="bg-tech-green h-full w-[22.1%]"></div>
+                        <div class="bg-tech-green h-full w-[24.1%]"></div>
                     </div>
-                    <div class="text-right text-xs text-[#666] mt-1">22,1% Margen Neto</div>
+                    <div class="text-right text-xs text-[#666] mt-1">24,1% Margen Neto</div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-[#121212] p-4 border border-[#333] flex flex-col justify-center items-center text-center">
+                        <div class="text-xs text-[#ccc] uppercase mb-1">Objetivo Realista</div>
+                        <div class="text-tech-green font-display text-4xl">40</div>
+                        <div class="text-xs text-[#666] uppercase mt-1">Burgers / Día</div>
+                    </div>
+                    <div class="bg-[#121212] p-4 border border-neon-accent flex flex-col justify-center items-center text-center relative overflow-hidden">
+                        <div class="absolute top-0 right-0 bg-neon-accent text-white text-[0.6rem] px-2 py-0.5 font-bold uppercase">Survival Mode</div>
+                        <div class="text-xs text-[#ccc] uppercase mb-1">Break-Even (Mínimo)</div>
+                        <div class="text-white font-display text-4xl">24</div>
+                        <div class="text-xs text-[#666] uppercase mt-1">Burgers / Día</div>
+                    </div>
                 </div>
 
                 <div>
@@ -474,7 +554,70 @@
 
     </div>
 
+
+    <!-- ANEXOS: Imágenes generadas -->
+    <section class="max-w-[900px] mx-auto my-10 px-4 md:px-5">
+        <article class="bg-panel-bg border border-panel-border shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
+            <div class="p-5 border-b border-[#333] flex items-center gap-[15px] bg-[#181818]">
+                <div class="w-10 h-10 flex items-center justify-center bg-[#222] text-neon-accent border border-[#333]">
+                    <i class="fas fa-paperclip"></i>
+                </div>
+                <h3 class="font-display text-[1.8rem] text-white tracking-[1px] uppercase">Anexos: Imágenes Generadas</h3>
+            </div>
+            <div class="p-[25px] flex flex-col gap-8 items-center justify-center">
+                <figure class="flex flex-col items-center w-full max-w-md bg-[#181818] border border-[#333] rounded-lg p-4">
+                    <img src="assets/Gemini_Generated_Image_bl3d9bbl3d9bbl3d.png" alt="Gemini Imagen 1" class="max-w-full rounded-lg shadow-lg border border-[#333] mb-2 cursor-zoom-in annex-img" data-img="assets/Gemini_Generated_Image_bl3d9bbl3d9bbl3d.png">
+                    <figcaption class="text-xs text-[#888] mt-1">Gemini Imagen 1</figcaption>
+                </figure>
+                <figure class="flex flex-col items-center w-full max-w-md bg-[#181818] border border-[#333] rounded-lg p-4">
+                    <img src="assets/Gemini_Generated_Image_mi74tumi74tumi74.png" alt="Gemini Imagen 2" class="max-w-full rounded-lg shadow-lg border border-[#333] mb-2 cursor-zoom-in annex-img" data-img="assets/Gemini_Generated_Image_mi74tumi74tumi74.png">
+                    <figcaption class="text-xs text-[#888] mt-1">Gemini Imagen 2</figcaption>
+                </figure>
+                <figure class="flex flex-col items-center w-full max-w-md bg-[#181818] border border-[#333] rounded-lg p-4">
+                    <img src="assets/Gemini_Generated_Image_sg87nesg87nesg87 (1).png" alt="Gemini Imagen 3" class="max-w-full rounded-lg shadow-lg border border-[#333] mb-2 cursor-zoom-in annex-img" data-img="assets/Gemini_Generated_Image_sg87nesg87nesg87 (1).png">
+                    <figcaption class="text-xs text-[#888] mt-1">Gemini Imagen 3</figcaption>
+                </figure>
+            </div>
+        </article>
+    </section>
+
+    <!-- Modal para zoom de imagen -->
+    <div id="zoomModal" class="zoom-modal-bg">
+        <span class="zoom-modal-close" id="zoomModalClose">&times;</span>
+        <img id="zoomModalImg" class="zoom-modal-img" src="" alt="Zoom Imagen">
+    </div>
+
     <script src="toc.js"></script>
+    <script>
+    // Modal zoom para imágenes de anexos
+    document.addEventListener('DOMContentLoaded', function() {
+        const modal = document.getElementById('zoomModal');
+        const modalImg = document.getElementById('zoomModalImg');
+        const closeBtn = document.getElementById('zoomModalClose');
+        document.querySelectorAll('.annex-img').forEach(img => {
+            img.addEventListener('click', function() {
+                modalImg.src = this.dataset.img;
+                modal.classList.add('active');
+            });
+        });
+        closeBtn.addEventListener('click', function() {
+            modal.classList.remove('active');
+            modalImg.src = '';
+        });
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                modalImg.src = '';
+            }
+        });
+        document.addEventListener('keydown', function(e) {
+            if (modal.classList.contains('active') && e.key === 'Escape') {
+                modal.classList.remove('active');
+                modalImg.src = '';
+            }
+        });
+    });
+    </script>
     <script>
         // Chart Configuration using Chart.js
         document.addEventListener('DOMContentLoaded', function() {

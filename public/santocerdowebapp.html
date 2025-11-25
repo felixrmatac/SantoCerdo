@@ -14,16 +14,41 @@
 </head>
 <body class="bg-bg-dark text-text-main font-body leading-relaxed overflow-x-hidden text-base">
 
-    <!-- Navigation -->
-    <nav class="sticky top-0 z-50 flex flex-wrap justify-center gap-3 md:gap-5 py-4 px-4 bg-[#1a1a1a] border-b border-[#333] shadow-lg">
-        <a href="index.html" class="text-text-muted hover:text-white font-display uppercase tracking-wider transition-colors text-sm md:text-base">Investor Deck</a>
-        <span class="text-[#333] hidden md:inline">|</span>
-        <a href="santocerdowebapp.html" class="text-neon-accent font-display uppercase tracking-wider border-b-2 border-neon-accent text-sm md:text-base">Santo Cerdo Brain</a>
-        <span class="text-[#333] hidden md:inline">|</span>
-        <a href="plan_viewer.html" class="text-text-muted hover:text-white font-display uppercase tracking-wider transition-colors text-sm md:text-base">Plan (MD)</a>
-        <span class="text-[#333] hidden md:inline">|</span>
-        <a href="plan_viewer_lean.html" class="text-text-muted hover:text-white font-display uppercase tracking-wider transition-colors text-sm md:text-base">Lean Plan (MD)</a>
-    </nav>
+        <!-- Shared header (loaded from _header.html) -->
+        <div id="site-header"></div>
+        <script>
+        (function(){
+            function insertHeader(html){
+                var container = document.getElementById('site-header');
+                if(container) container.innerHTML = html;
+            }
+            function highlightActive(){
+                try{
+                    var links = document.querySelectorAll('#site-header .nav-link');
+                    var current = window.location.pathname.split('/').pop();
+                    if(!current) current = 'index.html';
+                    links.forEach(function(a){
+                        a.classList.remove('text-neon-accent');
+                        a.classList.add('text-text-muted');
+                        var href = a.getAttribute('href');
+                        if(href === current || (href === 'index.html' && current === '')){
+                            a.classList.remove('text-text-muted');
+                            a.classList.add('text-neon-accent');
+                        }
+                    });
+                }catch(e){ console.warn('Highlight header error', e); }
+            }
+            fetch('_header.html').then(function(resp){
+                if(!resp.ok) throw new Error('Header fetch failed');
+                return resp.text();
+            }).then(function(text){
+                insertHeader(text);
+                highlightActive();
+            }).catch(function(){
+                // fallback: nothing
+            });
+        })();
+        </script>
 
     <header class="py-10 md:py-[60px] px-5 text-center bg-[radial-gradient(circle_at_center,_#2a1a2a_0%,_#121212_100%)] border-b-2 border-neon-accent">
         <h1 class="font-display text-5xl md:text-[4rem] uppercase tracking-[2px] mb-2.5 text-white drop-shadow-[0_0_10px_rgba(255,0,153,0.5)]">SANTO CERDO</h1>
@@ -136,8 +161,8 @@
                     <div class="mb-[25px] last:mb-0">
                         <h4 class="text-gold-accent font-display text-[1.2rem] mb-2.5 uppercase tracking-[0.5px]">3.1 Barrera de Entrada & Pricing</h4>
                         <ul class="list-none ml-0">
-                            <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]"><strong>Precio Digital (11€):</strong> Recompensa por autoservicio.</li>
-                            <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]"><strong>Tarifa Analógica (12€):</strong> "Multa" (+1€) por usar tiempo humano.</li>
+                            <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]"><strong>Precio Digital (11€):</strong> Ahorra 1€ al pedir y pagar por QR o Kiosco — recompensa por autoservicio.</li>
+                            <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]"><strong>Pago manual:</strong> Ausencia del ahorro digital; comunica siempre como un incentivo a pasarse al canal digital ("Ahorra 1€ escaneando el QR").</li>
                         </ul>
                     </div>
                     <div class="mb-[25px] last:mb-0">
@@ -154,6 +179,22 @@
                             <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]"><strong>Zero Friction:</strong> El cliente escanea, pide y paga. Tú montas bocadillos, no cuentas monedas.</li>
                             <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]"><strong>Ticket Booster:</strong> La gente pide más extras digitalmente (sin la presión de un humano esperando).</li>
                         </ul>
+                    </div>
+                    <!-- DEMO: Añadir Propina -->
+                    <div id="tip-demo" class="mb-[25px] last:mb-0 p-4 border border-[#333] bg-[#0f0f0f] rounded">
+                        <h4 class="text-gold-accent font-display text-[1.1rem] mb-2.5 uppercase tracking-[0.5px]">Demo: Añadir Propina (Checkout)</h4>
+                        <div class="text-[#ccc] mb-3">Selecciona una propina y pulsa <strong>Añadir propina</strong> — sonará algo y el "prompt LED" mostrará un copy canalla.</div>
+                        <div class="flex items-center gap-4 mb-3">
+                            <label class="text-sm"><input type="radio" name="tip" value="0" checked> Sin propina</label>
+                            <label class="text-sm"><input type="radio" name="tip" value="1"> €1</label>
+                            <label class="text-sm"><input type="radio" name="tip" value="2"> €2</label>
+                            <label class="text-sm"><input type="radio" name="tip" value="5"> €5</label>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <button id="add-tip-btn" class="px-4 py-2 bg-neon-accent text-black font-bold rounded">Añadir propina</button>
+                            <div id="prompt-led" class="ml-4 px-3 py-2 rounded text-sm font-bold text-black bg-gold-accent" style="min-width:220px;">LED: esperando...</div>
+                        </div>
+                        <div id="tip-feedback" class="mt-3 text-[0.95rem] text-[#bbb]"></div>
                     </div>
                 </div>
             </article>
@@ -233,7 +274,7 @@
                             <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]"><strong>🔴 Entrenamiento de la Bestia:</strong> El sistema aprende qué combinaciones te estresan.</li>
                             <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]"><strong>💀 La Guillotina:</strong> Long-press elimina item del menú. IA Táctica: "💀 ALERTA ZOMBIE: Quedan las últimas 8 burgers. Corred."</li>
                             <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]"><strong>🗣️ IA Táctica:</strong> Genera copy empático/gracioso para las pantallas de espera, reduciendo la ansiedad de la cola.</li>
-                            <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]"><strong>🔌 El Apagón:</strong> Datáfono GPRS + Rotulador. Tarifa Analógica activa.</li>
+                            <li class="mb-2 pl-5 relative before:content-['>>'] before:text-neon-accent before:absolute before:left-0 before:text-[0.8rem] before:top-[2px]"><strong>🔌 El Apagón:</strong> Datáfono GPRS + Rotulador. Procedimiento manual de emergencia para cobro y registro (cobro manual si procede).</li>
                         </ul>
                     </div>
                 </div>
@@ -334,6 +375,65 @@
     </footer>
 
     <script src="toc.js"></script>
+    <script>
+        // Tip demo: play a quick beep via WebAudio and flash a canalla LED message
+        (function(){
+            function playBeep(duration = 0.12, frequency = 880, volume = 0.2){
+                try{
+                    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+                    const o = ctx.createOscillator();
+                    const g = ctx.createGain();
+                    o.type = 'sine';
+                    o.frequency.value = frequency;
+                    g.gain.value = volume;
+                    o.connect(g);
+                    g.connect(ctx.destination);
+                    o.start();
+                    setTimeout(()=>{ o.stop(); ctx.close(); }, duration*1000);
+                }catch(e){ console.warn('Audio not available', e); }
+            }
+
+            function flashLed(el, text){
+                if(!el) return;
+                const original = el.textContent;
+                el.textContent = text;
+                el.classList.add('animate-pulse');
+                setTimeout(()=>{ el.classList.remove('animate-pulse'); el.textContent = original; }, 2200);
+            }
+
+            document.addEventListener('DOMContentLoaded', function(){
+                const btn = document.getElementById('add-tip-btn');
+                const led = document.getElementById('prompt-led');
+                const feedback = document.getElementById('tip-feedback');
+                const messages = [
+                    "Gracias, eres un santo (o un bribón).",
+                    "Propina recibida. Hoy la plancha te sonríe.",
+                    "¡Qué generosidad! Tu burger te lo agradecerá con sabor.",
+                    "Subiste el mood del piloto. ¡A volar!"
+                ];
+
+                if(!btn) return;
+
+                btn.addEventListener('click', function(){
+                    const sel = document.querySelector('input[name="tip"]:checked');
+                    const value = sel ? Number(sel.value) : 0;
+                    if(value <= 0){
+                        feedback.textContent = 'No se añadió propina.';
+                        flashLed(led, 'Sin propina. Sigue siendo un héroe.');
+                        playBeep(0.06, 660, 0.08);
+                        return;
+                    }
+                    // Play a short celebratory beep sequence
+                    playBeep(0.09, 880, 0.15);
+                    setTimeout(()=> playBeep(0.07, 1320, 0.12), 120);
+
+                    const msg = messages[Math.floor(Math.random()*messages.length)];
+                    feedback.textContent = `Propina añadida: €${value} — ${msg}`;
+                    flashLed(led, msg);
+                });
+            });
+        })();
+    </script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Ensure headers have IDs for TOC to work

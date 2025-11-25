@@ -128,11 +128,18 @@ El mercado de sándwiches de calidad es un nicho con competidores de todos los t
 | Salario Empleado | -1.650 € |  |
 | Suministros | -450 € |  |
 | Gestión y Seguros | -380 € |  |
-| Marketing | -300 € |  |
-| **TOTAL GASTOS FIJOS** | **-5.880 €** | **47,1%** |
-| **EBITDA (Beneficio)** | **3.252 €** | **26,0%** |
-| Impuestos (15% - Nueva Creación) | -488 € |  |
-| **BENEFICIO NETO A REPARTIR** | **2.764 €** | **22,1%** |
+| Marketing (Guerrilla) | 0 € |  |
+| **TOTAL GASTOS FIJOS** | **-5.580 €** | **44,7%** |
+| **EBITDA (Beneficio)** | **3.552 €** | **28,4%** |
+| Impuestos (15% - Nueva Creación) | -533 € |  |
+| **BENEFICIO NETO A REPARTIR** | **3.019 €** | **24,1%** |
+
+#### Punto de Equilibrio (Break-even)
+Para cubrir gastos y no perder dinero (Beneficio 0€), necesitamos:
+*   **Gastos Fijos Totales:** 5.580 €
+*   **Margen Contribución Medio:** ~9,51 €/unidad
+*   **Ventas Necesarias:** 587 Unidades/mes
+*   **OBJETIVO MÍNIMO DIARIO:** **24 Hamburguesas/día** (vs 40 del escenario realista).
 
 ---
 
@@ -175,7 +182,8 @@ El mercado de sándwiches de calidad es un nicho con competidores de todos los t
 * **Kit Cubetas GN:** 100 €
 * **Pinzas, Biberones, Cuchillos:** 100 €
 * **Tabla de Corte, Báscula, Termómetro:** 65 €
-* **Subtotal Utensilios:** **~368 €**
+* **Varios / Imprevistos:** 18 €
+* **Subtotal Utensilios:** **368 €**
 
 #### 3. Mobiliario e Instalaciones
 * **Estanterías, Mesa Horno, Extintor:** 320 €
@@ -193,8 +201,8 @@ El mercado de sándwiches de calidad es un nicho con competidores de todos los t
 #### 1. La Materia Prima (Coste Variable)
 | Partida | Cálculo | Coste Mensual |
 | :---- | :---- | :---- |
-| **Pulled Pork** | 131 kg x 10,50€/kg | 1.375,50 € |
-| **Pan** | 1.008 uds x 0,60€/ud | 605,00 € |
+| **Pulled Pork** | 131 kg (inc. 5% merma) x 10,50€/kg | 1.375,50 € |
+| **Pan** | 1.008 uds (inc. 5% merma) x 0,60€/ud | 605,00 € |
 | **Queso** | 29 kg x 7,50€/kg | 217,50 € |
 | **Vegetales** | Coleslaw, Rúcula, Cebolla | 240,00 € |
 | **Salsas** | Producción propia | 220,00 € |
@@ -214,8 +222,8 @@ El mercado de sándwiches de calidad es un nicho con competidores de todos los t
 | **Salario Empleado** | 1.650,00 € |
 | **Suministros (Luz/Agua/Net)** | ~450,00 € |
 | **Gestión y Seguros** | ~380,00 € |
-| **Marketing Mensual** | 300,00 € |
-| **TOTAL GASTOS FIJOS** | **5.880,00 €** |
+| **Marketing (Guerrilla)** | 0,00 € |
+| **TOTAL GASTOS FIJOS** | **5.580,00 €** |
 
 ---
 
